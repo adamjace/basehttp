@@ -36,5 +36,9 @@ func (s Server) Start() error {
 		c.registerHandlers(r)
 	}
 
-	return http.ListenAndServe(s.config.Bind, r)
+	middleware := newMiddleware()
+
+	handler := middleware.Log(r)
+
+	return http.ListenAndServe(s.config.Bind, handler)
 }
