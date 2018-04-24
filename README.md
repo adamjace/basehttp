@@ -1,6 +1,6 @@
 # basehttp
 
-A basic http service for Go
+A basic Golang HTTP service
 
 
 ## Run
